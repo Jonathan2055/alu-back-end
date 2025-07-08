@@ -2,8 +2,8 @@
 """
 Fetch and display TODO‑list progress for a given employee ID.
 """
-import sys
 import requests
+import sys
 
 
 if __name__ == "__main__":
