@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-#Here I was importing request modula and sys modula
+"""
+Fetches and displays TODO list progress for a given employee ID using an API.
+"""
 import requests
 import sys
 
