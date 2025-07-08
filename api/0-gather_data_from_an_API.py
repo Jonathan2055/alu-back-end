@@ -15,7 +15,9 @@ if __name__ == "__main__":
     employee_name = user_data.get("name")
 
     # Get user's TODOs
-    todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+    todos_url = (
+        f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+    )
     todos_response = requests.get(todos_url)
     todos = todos_response.json()
 
@@ -24,6 +26,8 @@ if __name__ == "__main__":
     total_tasks = len(todos)
     done_count = len(done_tasks)
 
-    print(f"Employee {employee_name} is done with tasks({done_count}/{total_tasks}):")
+    print(
+        f"Employee {employee_name} is done with tasks({done_count}/{total_tasks}):"
+    )
     for task in done_tasks:
         print(f"\t {task.get('title')}")
