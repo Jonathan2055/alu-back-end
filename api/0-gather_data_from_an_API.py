@@ -9,14 +9,15 @@ if __name__ == "__main__":
     employee_id = int(sys.argv[1])
 
     # Get user info
-    user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
+    user_url = "https://jsonplaceholder.typicode.com/users/{employee_id}"
     user_response = requests.get(user_url)
     user_data = user_response.json()
     employee_name = user_data.get("name")
 
     # Get user's TODOs
     todos_url = (
-        f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+        "https://jsonplaceholder.typicode.com/todos"
+f"?userId={employee_id}"
     )
     todos_response = requests.get(todos_url)
     todos = todos_response.json()
