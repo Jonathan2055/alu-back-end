@@ -23,14 +23,11 @@ if __name__ == "__main__":
     employee_name = user_data.get("name")
 
     # Get user's TODOs
-    todos_url = (
-        "https://jsonplaceholder.typicode.com/todos"
-        f"?userId={employee_id}"
-    )
-    todos_response = requests.get(todos_url)
-    todos = todos_response.json()
-
-    # Filter completed tasks
+    todos_url = "https://jsonplaceholder.typicode.com/todos"
+    params = {"userId": employee_id}
+    todos_response = requests.get(todos_url, params=params)
+    todos = todos_response.json() 	
+   # Filter completed tasks
     done_tasks = [task for task in todos if task.get("completed")]
     total_tasks = len(todos)
     done_count = len(done_tasks)
